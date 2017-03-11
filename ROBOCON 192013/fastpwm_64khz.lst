@@ -1,0 +1,48 @@
+   1               		.file	"fastpwm_64khz.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21 0000 DF93      		push r29
+  22 0002 CF93      		push r28
+  23 0004 CDB7      		in r28,__SP_L__
+  24 0006 DEB7      		in r29,__SP_H__
+  25               	/* prologue: function */
+  26               	/* frame size = 0 */
+  27               	.LM2:
+  28 0008 E7E3      		ldi r30,lo8(55)
+  29 000a F0E0      		ldi r31,hi8(55)
+  30 000c 8FEF      		ldi r24,lo8(-1)
+  31 000e 8083      		st Z,r24
+  32               	.LM3:
+  33 0010 E3E5      		ldi r30,lo8(83)
+  34 0012 F0E0      		ldi r31,hi8(83)
+  35 0014 89E6      		ldi r24,lo8(105)
+  36 0016 8083      		st Z,r24
+  37               	.LM4:
+  38 0018 ECE5      		ldi r30,lo8(92)
+  39 001a F0E0      		ldi r31,hi8(92)
+  40 001c 80E8      		ldi r24,lo8(-128)
+  41 001e 8083      		st Z,r24
+  42               	.L2:
+  43 0020 00C0      		rjmp .L2
+  44               	.LFE6:
+  70               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 fastpwm_64khz.c
+C:\DOCUME~1\ABHINU~1\LOCALS~1\Temp/cc98qf1N.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\ABHINU~1\LOCALS~1\Temp/cc98qf1N.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\ABHINU~1\LOCALS~1\Temp/cc98qf1N.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\ABHINU~1\LOCALS~1\Temp/cc98qf1N.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\ABHINU~1\LOCALS~1\Temp/cc98qf1N.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\ABHINU~1\LOCALS~1\Temp/cc98qf1N.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\ABHINU~1\LOCALS~1\Temp/cc98qf1N.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS

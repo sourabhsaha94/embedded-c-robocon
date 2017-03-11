@@ -1,0 +1,132 @@
+   1               		.file	"int.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	flag
+  17               	.global	flag
+  18               		.section .bss
+  21               	flag:
+  22 0000 0000      		.skip 2,0
+  23               		.text
+  24               	.global	__vector_10
+  26               	__vector_10:
+  27               	.LFB6:
+  28               	.LM1:
+  29 0000 1F92      		push __zero_reg__
+  30 0002 0F92      		push r0
+  31 0004 0FB6      		in r0,__SREG__
+  32 0006 0F92      		push r0
+  33 0008 1124      		clr __zero_reg__
+  34 000a 2F93      		push r18
+  35 000c 3F93      		push r19
+  36 000e 8F93      		push r24
+  37 0010 9F93      		push r25
+  38 0012 DF93      		push r29
+  39 0014 CF93      		push r28
+  40 0016 CDB7      		in r28,__SP_L__
+  41 0018 DEB7      		in r29,__SP_H__
+  42               	/* prologue: Signal */
+  43               	/* frame size = 0 */
+  44               	.LM2:
+  45 001a 8091 0000 		lds r24,flag
+  46 001e 9091 0000 		lds r25,(flag)+1
+  47 0022 21E0      		ldi r18,lo8(1)
+  48 0024 30E0      		ldi r19,hi8(1)
+  49 0026 8227      		eor r24,r18
+  50 0028 9327      		eor r25,r19
+  51 002a 9093 0000 		sts (flag)+1,r25
+  52 002e 8093 0000 		sts flag,r24
+  53               	/* epilogue start */
+  54               	.LM3:
+  55 0032 CF91      		pop r28
+  56 0034 DF91      		pop r29
+  57 0036 9F91      		pop r25
+  58 0038 8F91      		pop r24
+  59 003a 3F91      		pop r19
+  60 003c 2F91      		pop r18
+  61 003e 0F90      		pop r0
+  62 0040 0FBE      		out __SREG__,r0
+  63 0042 0F90      		pop r0
+  64 0044 1F90      		pop __zero_reg__
+  65 0046 1895      		reti
+  66               	.LFE6:
+  68               	.global	main
+  70               	main:
+  71               	.LFB7:
+  72               	.LM4:
+  73 0048 DF93      		push r29
+  74 004a CF93      		push r28
+  75 004c CDB7      		in r28,__SP_L__
+  76 004e DEB7      		in r29,__SP_H__
+  77               	/* prologue: function */
+  78               	/* frame size = 0 */
+  79               	.LM5:
+  80 0050 AFE5      		ldi r26,lo8(95)
+  81 0052 B0E0      		ldi r27,hi8(95)
+  82 0054 EFE5      		ldi r30,lo8(95)
+  83 0056 F0E0      		ldi r31,hi8(95)
+  84 0058 8081      		ld r24,Z
+  85 005a 8068      		ori r24,lo8(-128)
+  86 005c 8C93      		st X,r24
+  87               	.LM6:
+  88 005e EAE3      		ldi r30,lo8(58)
+  89 0060 F0E0      		ldi r31,hi8(58)
+  90 0062 8FEF      		ldi r24,lo8(-1)
+  91 0064 8083      		st Z,r24
+  92               	.LM7:
+  93 0066 E3E5      		ldi r30,lo8(83)
+  94 0068 F0E0      		ldi r31,hi8(83)
+  95 006a 8DE1      		ldi r24,lo8(29)
+  96 006c 8083      		st Z,r24
+  97               	.LM8:
+  98 006e A9E5      		ldi r26,lo8(89)
+  99 0070 B0E0      		ldi r27,hi8(89)
+ 100 0072 E9E5      		ldi r30,lo8(89)
+ 101 0074 F0E0      		ldi r31,hi8(89)
+ 102 0076 8081      		ld r24,Z
+ 103 0078 8260      		ori r24,lo8(2)
+ 104 007a 8C93      		st X,r24
+ 105               	.L6:
+ 106               	.LM9:
+ 107 007c ECE5      		ldi r30,lo8(92)
+ 108 007e F0E0      		ldi r31,hi8(92)
+ 109 0080 84E6      		ldi r24,lo8(100)
+ 110 0082 8083      		st Z,r24
+ 111               	.LM10:
+ 112 0084 8091 0000 		lds r24,flag
+ 113 0088 9091 0000 		lds r25,(flag)+1
+ 114 008c 8130      		cpi r24,1
+ 115 008e 9105      		cpc r25,__zero_reg__
+ 116 0090 01F4      		brne .L4
+ 117               	.LM11:
+ 118 0092 EBE3      		ldi r30,lo8(59)
+ 119 0094 F0E0      		ldi r31,hi8(59)
+ 120 0096 1082      		st Z,__zero_reg__
+ 121 0098 00C0      		rjmp .L6
+ 122               	.L4:
+ 123               	.LM12:
+ 124 009a EBE3      		ldi r30,lo8(59)
+ 125 009c F0E0      		ldi r31,hi8(59)
+ 126 009e 8FEF      		ldi r24,lo8(-1)
+ 127 00a0 8083      		st Z,r24
+ 128 00a2 00C0      		rjmp .L6
+ 129               	.LFE7:
+ 163               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 int.c
+C:\Users\SOURABH\AppData\Local\Temp/ccXq99dY.s:2      *ABS*:0000003f __SREG__
+C:\Users\SOURABH\AppData\Local\Temp/ccXq99dY.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SOURABH\AppData\Local\Temp/ccXq99dY.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SOURABH\AppData\Local\Temp/ccXq99dY.s:5      *ABS*:00000034 __CCP__
+C:\Users\SOURABH\AppData\Local\Temp/ccXq99dY.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SOURABH\AppData\Local\Temp/ccXq99dY.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SOURABH\AppData\Local\Temp/ccXq99dY.s:21     .bss:00000000 flag
+C:\Users\SOURABH\AppData\Local\Temp/ccXq99dY.s:26     .text:00000000 __vector_10
+C:\Users\SOURABH\AppData\Local\Temp/ccXq99dY.s:70     .text:00000048 main
+
+UNDEFINED SYMBOLS
+__do_clear_bss

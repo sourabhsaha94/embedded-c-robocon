@@ -1,0 +1,1 @@
+fullfinal.o: fullfinal.c

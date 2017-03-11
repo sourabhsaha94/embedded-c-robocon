@@ -1,0 +1,188 @@
+   1               		.file	"working.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB2:
+  20               	.LM1:
+  21 0000 DF93      		push r29
+  22 0002 CF93      		push r28
+  23 0004 00D0      		rcall .
+  24 0006 CDB7      		in r28,__SP_L__
+  25 0008 DEB7      		in r29,__SP_H__
+  26               	/* prologue: function */
+  27               	/* frame size = 2 */
+  28               	.LM2:
+  29 000a E7E3      		ldi r30,lo8(55)
+  30 000c F0E0      		ldi r31,hi8(55)
+  31 000e 8DEE      		ldi r24,lo8(-19)
+  32 0010 8083      		st Z,r24
+  33               	.LM3:
+  34 0012 E1E3      		ldi r30,lo8(49)
+  35 0014 F0E0      		ldi r31,hi8(49)
+  36 0016 8DEE      		ldi r24,lo8(-19)
+  37 0018 8083      		st Z,r24
+  38               	.LM4:
+  39 001a EAE3      		ldi r30,lo8(58)
+  40 001c F0E0      		ldi r31,hi8(58)
+  41 001e 8FEF      		ldi r24,lo8(-1)
+  42 0020 8083      		st Z,r24
+  43               	.LM5:
+  44 0022 E4E3      		ldi r30,lo8(52)
+  45 0024 F0E0      		ldi r31,hi8(52)
+  46 0026 8BED      		ldi r24,lo8(-37)
+  47 0028 8083      		st Z,r24
+  48               	.L11:
+  49               	.LM6:
+  50 002a E2E3      		ldi r30,lo8(50)
+  51 002c F0E0      		ldi r31,hi8(50)
+  52 002e 82E1      		ldi r24,lo8(18)
+  53 0030 8083      		st Z,r24
+  54               	.LM7:
+  55 0032 EBE3      		ldi r30,lo8(59)
+  56 0034 F0E0      		ldi r31,hi8(59)
+  57 0036 1082      		st Z,__zero_reg__
+  58               	.LM8:
+  59 0038 E5E3      		ldi r30,lo8(53)
+  60 003a F0E0      		ldi r31,hi8(53)
+  61 003c 82E1      		ldi r24,lo8(18)
+  62 003e 8083      		st Z,r24
+  63 0040 00C0      		rjmp .L2
+  64               	.L5:
+  65               	.LM9:
+  66 0042 E8E3      		ldi r30,lo8(56)
+  67 0044 F0E0      		ldi r31,hi8(56)
+  68 0046 82E1      		ldi r24,lo8(18)
+  69 0048 8083      		st Z,r24
+  70               	.LM10:
+  71 004a E6E3      		ldi r30,lo8(54)
+  72 004c F0E0      		ldi r31,hi8(54)
+  73 004e 8081      		ld r24,Z
+  74 0050 8A83      		std Y+2,r24
+  75               	.LM11:
+  76 0052 8A81      		ldd r24,Y+2
+  77 0054 882F      		mov r24,r24
+  78 0056 90E0      		ldi r25,lo8(0)
+  79 0058 8271      		andi r24,lo8(18)
+  80 005a 9070      		andi r25,hi8(18)
+  81 005c 0097      		sbiw r24,0
+  82 005e 01F4      		brne .L3
+  83               	.LM12:
+  84 0060 EBE3      		ldi r30,lo8(59)
+  85 0062 F0E0      		ldi r31,hi8(59)
+  86 0064 80EF      		ldi r24,lo8(-16)
+  87 0066 8083      		st Z,r24
+  88 0068 00C0      		rjmp .L2
+  89               	.L3:
+  90               	.LM13:
+  91 006a 8A81      		ldd r24,Y+2
+  92 006c 882F      		mov r24,r24
+  93 006e 90E0      		ldi r25,lo8(0)
+  94 0070 8270      		andi r24,lo8(2)
+  95 0072 9070      		andi r25,hi8(2)
+  96 0074 0097      		sbiw r24,0
+  97 0076 01F0      		breq .L4
+  98               	.LM14:
+  99 0078 EBE3      		ldi r30,lo8(59)
+ 100 007a F0E0      		ldi r31,hi8(59)
+ 101 007c 80EE      		ldi r24,lo8(-32)
+ 102 007e 8083      		st Z,r24
+ 103 0080 00C0      		rjmp .L2
+ 104               	.L4:
+ 105               	.LM15:
+ 106 0082 EBE3      		ldi r30,lo8(59)
+ 107 0084 F0E0      		ldi r31,hi8(59)
+ 108 0086 80EB      		ldi r24,lo8(-80)
+ 109 0088 8083      		st Z,r24
+ 110               	.L2:
+ 111               	.LM16:
+ 112 008a E0E3      		ldi r30,lo8(48)
+ 113 008c F0E0      		ldi r31,hi8(48)
+ 114 008e 8081      		ld r24,Z
+ 115 0090 8031      		cpi r24,lo8(16)
+ 116 0092 01F4      		brne .L5
+ 117               	.LM17:
+ 118 0094 E0E3      		ldi r30,lo8(48)
+ 119 0096 F0E0      		ldi r31,hi8(48)
+ 120 0098 8081      		ld r24,Z
+ 121 009a 8031      		cpi r24,lo8(16)
+ 122 009c 01F4      		brne .L11
+ 123               	.LM18:
+ 124 009e E0E3      		ldi r30,lo8(48)
+ 125 00a0 F0E0      		ldi r31,hi8(48)
+ 126 00a2 8081      		ld r24,Z
+ 127 00a4 8983      		std Y+1,r24
+ 128 00a6 00C0      		rjmp .L7
+ 129               	.L10:
+ 130               	.LM19:
+ 131 00a8 E8E3      		ldi r30,lo8(56)
+ 132 00aa F0E0      		ldi r31,hi8(56)
+ 133 00ac 82E1      		ldi r24,lo8(18)
+ 134 00ae 8083      		st Z,r24
+ 135               	.LM20:
+ 136 00b0 E6E3      		ldi r30,lo8(54)
+ 137 00b2 F0E0      		ldi r31,hi8(54)
+ 138 00b4 8081      		ld r24,Z
+ 139 00b6 8A83      		std Y+2,r24
+ 140               	.LM21:
+ 141 00b8 8A81      		ldd r24,Y+2
+ 142 00ba 882F      		mov r24,r24
+ 143 00bc 90E0      		ldi r25,lo8(0)
+ 144 00be 8271      		andi r24,lo8(18)
+ 145 00c0 9070      		andi r25,hi8(18)
+ 146 00c2 0097      		sbiw r24,0
+ 147 00c4 01F4      		brne .L8
+ 148               	.LM22:
+ 149 00c6 EBE3      		ldi r30,lo8(59)
+ 150 00c8 F0E0      		ldi r31,hi8(59)
+ 151 00ca 1082      		st Z,__zero_reg__
+ 152 00cc 00C0      		rjmp .L7
+ 153               	.L8:
+ 154               	.LM23:
+ 155 00ce 8A81      		ldd r24,Y+2
+ 156 00d0 882F      		mov r24,r24
+ 157 00d2 90E0      		ldi r25,lo8(0)
+ 158 00d4 8071      		andi r24,lo8(16)
+ 159 00d6 9070      		andi r25,hi8(16)
+ 160 00d8 0097      		sbiw r24,0
+ 161 00da 01F0      		breq .L9
+ 162               	.LM24:
+ 163 00dc EBE3      		ldi r30,lo8(59)
+ 164 00de F0E0      		ldi r31,hi8(59)
+ 165 00e0 80EE      		ldi r24,lo8(-32)
+ 166 00e2 8083      		st Z,r24
+ 167 00e4 00C0      		rjmp .L7
+ 168               	.L9:
+ 169               	.LM25:
+ 170 00e6 EBE3      		ldi r30,lo8(59)
+ 171 00e8 F0E0      		ldi r31,hi8(59)
+ 172 00ea 80EB      		ldi r24,lo8(-80)
+ 173 00ec 8083      		st Z,r24
+ 174               	.L7:
+ 175               	.LM26:
+ 176 00ee 8981      		ldd r24,Y+1
+ 177 00f0 882F      		mov r24,r24
+ 178 00f2 90E0      		ldi r25,lo8(0)
+ 179 00f4 8071      		andi r24,lo8(16)
+ 180 00f6 9070      		andi r25,hi8(16)
+ 181 00f8 0097      		sbiw r24,0
+ 182 00fa 01F4      		brne .L10
+ 183 00fc 00C0      		rjmp .L11
+ 184               	.LFE2:
+ 210               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 working.c
+C:\Users\SOURABH\AppData\Local\Temp/ccZjYaG3.s:2      *ABS*:0000003f __SREG__
+C:\Users\SOURABH\AppData\Local\Temp/ccZjYaG3.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SOURABH\AppData\Local\Temp/ccZjYaG3.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SOURABH\AppData\Local\Temp/ccZjYaG3.s:5      *ABS*:00000034 __CCP__
+C:\Users\SOURABH\AppData\Local\Temp/ccZjYaG3.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SOURABH\AppData\Local\Temp/ccZjYaG3.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SOURABH\AppData\Local\Temp/ccZjYaG3.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,39 @@
+   1               		.file	"test.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 1092 0A01 		sts 266,__zero_reg__
+  25               	.LM3:
+  26 0004 1092 0B01 		sts 267,__zero_reg__
+  27               	.L2:
+  28               	.LM4:
+  29 0008 1092 0A01 		sts 266,__zero_reg__
+  30               	.LM5:
+  31 000c 1092 0B01 		sts 267,__zero_reg__
+  32               	.LM6:
+  33 0010 8091 0901 		lds r24,265
+  34 0014 00C0      		rjmp .L2
+  35               	.LFE2:
+  61               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 test.c
+C:\Users\SOURABH\AppData\Local\Temp/cclaPZyN.s:2      *ABS*:0000003f __SREG__
+C:\Users\SOURABH\AppData\Local\Temp/cclaPZyN.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SOURABH\AppData\Local\Temp/cclaPZyN.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SOURABH\AppData\Local\Temp/cclaPZyN.s:5      *ABS*:00000034 __CCP__
+C:\Users\SOURABH\AppData\Local\Temp/cclaPZyN.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SOURABH\AppData\Local\Temp/cclaPZyN.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SOURABH\AppData\Local\Temp/cclaPZyN.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS

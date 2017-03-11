@@ -1,0 +1,16 @@
+#include<avr/io.h>
+void main(void)
+{
+DDRD=0x00;//PD0 input pin UART
+DDRA=0xFF;
+UCSRA&=0b01111101//RXC and U2X reset
+UBRR=103;//set baud rate 9600 with U2X reset
+UCSRB=(1<<RXEN);//transmitter enabled
+UCSRC=(1<<URSEL)|(1<<USBS)|(3<<USCZ0);//8bit frame size 2 stop bits
+while(!(UCSRA&100000000))
+;
+while(1)
+{
+PORTA=UDR;
+}
+}

@@ -1,0 +1,12 @@
+#include<avr/io.h>
+#include<util/delay.h>
+void main(void)
+{
+while(1)
+{
+PORTA=0b00000001;
+_delay_ms(10000);
+PORTA=0b00000000;
+_delay_ms(10000);
+}
+}

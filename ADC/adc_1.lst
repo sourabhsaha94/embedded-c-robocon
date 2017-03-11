@@ -1,0 +1,120 @@
+   1               		.file	"adc_1.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21 0000 DF93      		push r29
+  22 0002 CF93      		push r28
+  23 0004 00D0      		rcall .
+  24 0006 00D0      		rcall .
+  25 0008 CDB7      		in r28,__SP_L__
+  26 000a DEB7      		in r29,__SP_H__
+  27               	/* prologue: function */
+  28               	/* frame size = 4 */
+  29               	.LM2:
+  30 000c E1E2      		ldi r30,lo8(33)
+  31 000e F0E0      		ldi r31,hi8(33)
+  32 0010 8FEF      		ldi r24,lo8(-1)
+  33 0012 8083      		st Z,r24
+  34               	.LM3:
+  35 0014 E0E3      		ldi r30,lo8(48)
+  36 0016 F0E0      		ldi r31,hi8(48)
+  37 0018 1082      		st Z,__zero_reg__
+  38               	.LM4:
+  39 001a E1E3      		ldi r30,lo8(49)
+  40 001c F0E0      		ldi r31,hi8(49)
+  41 001e 1082      		st Z,__zero_reg__
+  42               	.LM5:
+  43 0020 E4E2      		ldi r30,lo8(36)
+  44 0022 F0E0      		ldi r31,hi8(36)
+  45 0024 8FEF      		ldi r24,lo8(-1)
+  46 0026 8083      		st Z,r24
+  47               	.LM6:
+  48 0028 E5E2      		ldi r30,lo8(37)
+  49 002a F0E0      		ldi r31,hi8(37)
+  50 002c 8AEA      		ldi r24,lo8(-86)
+  51 002e 8083      		st Z,r24
+  52               	.LM7:
+  53 0030 EBE7      		ldi r30,lo8(123)
+  54 0032 F0E0      		ldi r31,hi8(123)
+  55 0034 1082      		st Z,__zero_reg__
+  56               	.LM8:
+  57 0036 EAE7      		ldi r30,lo8(122)
+  58 0038 F0E0      		ldi r31,hi8(122)
+  59 003a 87EC      		ldi r24,lo8(-57)
+  60 003c 8083      		st Z,r24
+  61               	.LM9:
+  62 003e ECE7      		ldi r30,lo8(124)
+  63 0040 F0E0      		ldi r31,hi8(124)
+  64 0042 81EC      		ldi r24,lo8(-63)
+  65 0044 8083      		st Z,r24
+  66               	.L3:
+  67               	.LM10:
+  68 0046 AAE7      		ldi r26,lo8(122)
+  69 0048 B0E0      		ldi r27,hi8(122)
+  70 004a EAE7      		ldi r30,lo8(122)
+  71 004c F0E0      		ldi r31,hi8(122)
+  72 004e 8081      		ld r24,Z
+  73 0050 8064      		ori r24,lo8(64)
+  74 0052 8C93      		st X,r24
+  75               	.LM11:
+  76 0054 E8E7      		ldi r30,lo8(120)
+  77 0056 F0E0      		ldi r31,hi8(120)
+  78 0058 1082      		st Z,__zero_reg__
+  79               	.LM12:
+  80 005a E9E7      		ldi r30,lo8(121)
+  81 005c F0E0      		ldi r31,hi8(121)
+  82 005e 1082      		st Z,__zero_reg__
+  83               	.L2:
+  84               	.LM13:
+  85 0060 EAE7      		ldi r30,lo8(122)
+  86 0062 F0E0      		ldi r31,hi8(122)
+  87 0064 8081      		ld r24,Z
+  88 0066 882F      		mov r24,r24
+  89 0068 90E0      		ldi r25,lo8(0)
+  90 006a 8074      		andi r24,lo8(64)
+  91 006c 9070      		andi r25,hi8(64)
+  92 006e 0097      		sbiw r24,0
+  93 0070 01F4      		brne .L2
+  94               	.LM14:
+  95 0072 E8E7      		ldi r30,lo8(120)
+  96 0074 F0E0      		ldi r31,hi8(120)
+  97 0076 8081      		ld r24,Z
+  98 0078 882F      		mov r24,r24
+  99 007a 90E0      		ldi r25,lo8(0)
+ 100 007c 9C83      		std Y+4,r25
+ 101 007e 8B83      		std Y+3,r24
+ 102               	.LM15:
+ 103 0080 E9E7      		ldi r30,lo8(121)
+ 104 0082 F0E0      		ldi r31,hi8(121)
+ 105 0084 8081      		ld r24,Z
+ 106 0086 882F      		mov r24,r24
+ 107 0088 90E0      		ldi r25,lo8(0)
+ 108 008a 9A83      		std Y+2,r25
+ 109 008c 8983      		std Y+1,r24
+ 110               	.LM16:
+ 111 008e E2E2      		ldi r30,lo8(34)
+ 112 0090 F0E0      		ldi r31,hi8(34)
+ 113 0092 8B81      		ldd r24,Y+3
+ 114 0094 8083      		st Z,r24
+ 115 0096 00C0      		rjmp .L3
+ 116               	.LFE6:
+ 142               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 adc_1.c
+C:\Users\SOURABH\AppData\Local\Temp/cc77dnC0.s:2      *ABS*:0000003f __SREG__
+C:\Users\SOURABH\AppData\Local\Temp/cc77dnC0.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SOURABH\AppData\Local\Temp/cc77dnC0.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SOURABH\AppData\Local\Temp/cc77dnC0.s:5      *ABS*:00000034 __CCP__
+C:\Users\SOURABH\AppData\Local\Temp/cc77dnC0.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SOURABH\AppData\Local\Temp/cc77dnC0.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SOURABH\AppData\Local\Temp/cc77dnC0.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS

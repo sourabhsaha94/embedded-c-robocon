@@ -1,0 +1,71 @@
+   1               		.file	"test.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB2:
+  20               	.LM1:
+  21 0000 DF93      		push r29
+  22 0002 CF93      		push r28
+  23 0004 CDB7      		in r28,__SP_L__
+  24 0006 DEB7      		in r29,__SP_H__
+  25               	/* prologue: function */
+  26               	/* frame size = 0 */
+  27               	.LM2:
+  28 0008 E7E3      		ldi r30,lo8(55)
+  29 000a F0E0      		ldi r31,hi8(55)
+  30 000c 8FED      		ldi r24,lo8(-33)
+  31 000e 8083      		st Z,r24
+  32               	.L4:
+  33               	.LM3:
+  34 0010 E8E3      		ldi r30,lo8(56)
+  35 0012 F0E0      		ldi r31,hi8(56)
+  36 0014 80E4      		ldi r24,lo8(64)
+  37 0016 8083      		st Z,r24
+  38               	.LM4:
+  39 0018 E6E3      		ldi r30,lo8(54)
+  40 001a F0E0      		ldi r31,hi8(54)
+  41 001c 8081      		ld r24,Z
+  42 001e 882F      		mov r24,r24
+  43 0020 90E0      		ldi r25,lo8(0)
+  44 0022 8072      		andi r24,lo8(32)
+  45 0024 9070      		andi r25,hi8(32)
+  46 0026 0097      		sbiw r24,0
+  47 0028 01F0      		breq .L2
+  48               	.LM5:
+  49 002a A8E3      		ldi r26,lo8(56)
+  50 002c B0E0      		ldi r27,hi8(56)
+  51 002e E8E3      		ldi r30,lo8(56)
+  52 0030 F0E0      		ldi r31,hi8(56)
+  53 0032 8081      		ld r24,Z
+  54 0034 8160      		ori r24,lo8(1)
+  55 0036 8C93      		st X,r24
+  56 0038 00C0      		rjmp .L4
+  57               	.L2:
+  58               	.LM6:
+  59 003a A8E3      		ldi r26,lo8(56)
+  60 003c B0E0      		ldi r27,hi8(56)
+  61 003e E8E3      		ldi r30,lo8(56)
+  62 0040 F0E0      		ldi r31,hi8(56)
+  63 0042 8081      		ld r24,Z
+  64 0044 8E7F      		andi r24,lo8(-2)
+  65 0046 8C93      		st X,r24
+  66 0048 00C0      		rjmp .L4
+  67               	.LFE2:
+  93               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 test.c
+C:\Users\SOURABH\AppData\Local\Temp/ccz3u8ND.s:2      *ABS*:0000003f __SREG__
+C:\Users\SOURABH\AppData\Local\Temp/ccz3u8ND.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SOURABH\AppData\Local\Temp/ccz3u8ND.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SOURABH\AppData\Local\Temp/ccz3u8ND.s:5      *ABS*:00000034 __CCP__
+C:\Users\SOURABH\AppData\Local\Temp/ccz3u8ND.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SOURABH\AppData\Local\Temp/ccz3u8ND.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SOURABH\AppData\Local\Temp/ccz3u8ND.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS

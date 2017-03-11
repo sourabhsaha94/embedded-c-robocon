@@ -1,0 +1,79 @@
+   1               		.file	"test.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB2:
+  20               	.LM1:
+  21 0000 DF93      		push r29
+  22 0002 CF93      		push r28
+  23 0004 CDB7      		in r28,__SP_L__
+  24 0006 DEB7      		in r29,__SP_H__
+  25               	/* prologue: function */
+  26               	/* frame size = 0 */
+  27               	.LM2:
+  28 0008 E7E3      		ldi r30,lo8(55)
+  29 000a F0E0      		ldi r31,hi8(55)
+  30 000c 8FEF      		ldi r24,lo8(-1)
+  31 000e 8083      		st Z,r24
+  32               	.LM3:
+  33 0010 A7E3      		ldi r26,lo8(55)
+  34 0012 B0E0      		ldi r27,hi8(55)
+  35 0014 E7E3      		ldi r30,lo8(55)
+  36 0016 F0E0      		ldi r31,hi8(55)
+  37 0018 8081      		ld r24,Z
+  38 001a 8D7F      		andi r24,lo8(-3)
+  39 001c 8C93      		st X,r24
+  40               	.L4:
+  41               	.LM4:
+  42 001e E8E3      		ldi r30,lo8(56)
+  43 0020 F0E0      		ldi r31,hi8(56)
+  44 0022 81E0      		ldi r24,lo8(1)
+  45 0024 8083      		st Z,r24
+  46               	.LM5:
+  47 0026 E6E3      		ldi r30,lo8(54)
+  48 0028 F0E0      		ldi r31,hi8(54)
+  49 002a 8081      		ld r24,Z
+  50 002c 882F      		mov r24,r24
+  51 002e 90E0      		ldi r25,lo8(0)
+  52 0030 8270      		andi r24,lo8(2)
+  53 0032 9070      		andi r25,hi8(2)
+  54 0034 0097      		sbiw r24,0
+  55 0036 01F0      		breq .L2
+  56               	.LM6:
+  57 0038 A8E3      		ldi r26,lo8(56)
+  58 003a B0E0      		ldi r27,hi8(56)
+  59 003c E8E3      		ldi r30,lo8(56)
+  60 003e F0E0      		ldi r31,hi8(56)
+  61 0040 8081      		ld r24,Z
+  62 0042 8460      		ori r24,lo8(4)
+  63 0044 8C93      		st X,r24
+  64 0046 00C0      		rjmp .L4
+  65               	.L2:
+  66               	.LM7:
+  67 0048 A8E3      		ldi r26,lo8(56)
+  68 004a B0E0      		ldi r27,hi8(56)
+  69 004c E8E3      		ldi r30,lo8(56)
+  70 004e F0E0      		ldi r31,hi8(56)
+  71 0050 8081      		ld r24,Z
+  72 0052 8B7F      		andi r24,lo8(-5)
+  73 0054 8C93      		st X,r24
+  74 0056 00C0      		rjmp .L4
+  75               	.LFE2:
+ 101               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 test.c
+C:\Users\SOURABH\AppData\Local\Temp/cc474zm9.s:2      *ABS*:0000003f __SREG__
+C:\Users\SOURABH\AppData\Local\Temp/cc474zm9.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SOURABH\AppData\Local\Temp/cc474zm9.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SOURABH\AppData\Local\Temp/cc474zm9.s:5      *ABS*:00000034 __CCP__
+C:\Users\SOURABH\AppData\Local\Temp/cc474zm9.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SOURABH\AppData\Local\Temp/cc474zm9.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SOURABH\AppData\Local\Temp/cc474zm9.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS
